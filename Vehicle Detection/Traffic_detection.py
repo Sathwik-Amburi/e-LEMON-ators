@@ -1,7 +1,7 @@
 import cv2
 cascade_src = 'cars.xml'
-#video_src = 'dataset/video1.avi'
-video_src = 'dataset/traffic.avi'
+video_src = 'dataset/video1.avi'
+#video_src = 'dataset/traffic.avi'
 #video_src = 'dataset/video2.avi'
 
 cap = cv2.VideoCapture(video_src)
@@ -26,7 +26,6 @@ while True:
         break
 
 cv2.destroyAllWindows()
-print(count)
 f= open("Output.txt","w+")
 if count<501:
     f.write("No Traffic")
