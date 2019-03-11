@@ -51,7 +51,7 @@ fgbg=cv2.createBackgroundSubtractorMOG2(detectShadows=True)
 #Kernals
 kernalOp = np.ones((3,3),np.uint8)
 kernalOp2 = np.ones((5,5),np.uint8)
-kernalCl = np.ones((11,11),np.uint)
+kernalCl = np.ones((11,11),np.uint8)
 
 
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -77,8 +77,8 @@ while(cap.isOpened()):
         mask2=cv2.morphologyEx(imBin2,cv2.MORPH_CLOSE,kernalOp)
 
         #Closing i.e First Dilate then Erode
-        mask=cv2.morphologyEx(mask,cv2.MORPH_CLOSE,kernalOp2)
-        mask2=cv2.morphologyEx(mask2,cv2.MORPH_CLOSE,kernalOp2)
+        mask=cv2.morphologyEx(mask,cv2.MORPH_CLOSE,kernalCl)
+        mask2=cv2.morphologyEx(mask2,cv2.MORPH_CLOSE,kernalCl)
 
 
         #Find Contours
