@@ -1,4 +1,6 @@
 import cv2
+from gtts import gTTS
+import os
 cascade_src = 'cars.xml'
 video_src = 'dataset/video1.avi'
 #video_src = 'dataset/traffic.avi'
@@ -28,9 +30,15 @@ while True:
 cv2.destroyAllWindows()
 f= open("Output.txt","w+")
 if count<501:
-    f.write("No Traffic")
+    f.write("N")
+    tts = gTTS(text='There is no traffic, continue on the same route', lang='en')
+    tts.save("Speak.mp3")
+    os.system("Speak.mp3")
 else:
-    f.write("Traffic")
+    f.write("t")
+    tts = gTTS(text='There is traffic, choose an alternate route', lang='en')
+    tts.save("Speak.mp3")
+    os.system("Speak.mp3")
     
 f.close()
 
