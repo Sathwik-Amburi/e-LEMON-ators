@@ -5,6 +5,7 @@ cascade_src = 'cars.xml'
 video_src = 'dataset/video1.avi'
 #video_src = 'dataset/traffic.avi'
 #video_src = 'dataset/video2.avi'
+#video_src = 'dataset/New video_Small.mp4'
 
 cap = cv2.VideoCapture(video_src)
 car_cascade = cv2.CascadeClassifier(cascade_src)
@@ -24,7 +25,7 @@ while True:
     
     cv2.imshow('video', img)
     
-    if cv2.waitKey(33) == 27:
+    if cv2.waitKey(20) == 20:
         break
 
 cv2.destroyAllWindows()
